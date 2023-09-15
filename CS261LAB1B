@@ -1,0 +1,21 @@
+public class RecursionPower {
+        public static boolean PowerFour(int num) {
+            if (num <= 0) {
+                return false;
+            } else if (num == 1) {
+                return true;
+            } else if (num % 4 != 0) {
+                return false;
+            }
+
+            return PowerFour(num / 4); // Recursive.
+        }
+        public static void main(String[] args) {
+            int number = 58;
+            if (PowerFour(number)) {
+                System.out.println(number + "True");
+            } else {
+                System.out.println(number + "False");
+            }
+        }
+    }
