@@ -1,0 +1,24 @@
+public class FourLoop {
+    public static boolean PowerFour(int num) {
+        if (num <= 0) {
+            
+            return false;
+        }
+        while (num > 1) {
+            if (num % 4 != 0) {
+//                 not a power of four.
+            }
+            num /= 4; // Divide num by 4
+        }
+
+        return true; // power of four.
+    }
+    public static void main(String[] args) {
+        int number = 64;
+        if (PowerFour(number)) {
+            System.out.println(number + " TRUE");
+        } else {
+            System.out.println(number + " FALSE");
+        }
+    }
+}
