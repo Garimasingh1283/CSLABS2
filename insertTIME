@@ -1,0 +1,79 @@
+#include <time.h>
+#include <stdio.h>
+
+
+void insertionSort(int arr[], int n)
+{
+	for (int i = 1; i < n; i++) {
+		int key = arr[i];
+		int j = i - 1;
+		
+		while (j>= 0 && arr[j]>key) {
+			arr[j+1] = arr[j];
+			j--;
+		}
+		arr[j+1] = key;
+	}
+}
+
+
+void Display(int arr[], int n)
+{
+
+	for (int i = 0; i < n; i++)
+		printf("%d ", arr[i]);
+	printf("\n");
+}
+
+
+
+int main()
+{	
+printf("INSETION SORT \n");
+	int n;
+	int arr1[1024];
+	for (int i = 0 ;i < 1024;i++){
+		arr1[i] = i+1;
+		}
+// clock_t is a inbuilt module function ,  s means start and end means terminate the clock 
+   clock_t s, e;
+   double total;
+
+// this is for the best case time complexity
+   s= clock();
+   insertionSort(arr1, 1024);
+   e = clock()
+;   total = (double)(e - s) / CLOCKS_PER_SEC;
+   printf("Best case \n");
+   printf("Total time taken by CPU: %f\n", total  );
+   
+   
+   int arr2[1024];
+   for (int i= 0 ;i < 1024;i++){
+   	arr1[i] = 1024-i;
+	}
+
+  // this is for worst case tc
+clock_t s1, e1;
+   double t;
+
+
+   s1 = clock();
+   insertionSort(arr2, 1024);
+   e1 = clock();
+   t = (double)(e1 - s1) / CLOCKS_PER_SEC;
+   printf("Worst  case \n");
+   printf("Total time taken by CPU: %f\n", t  );
+   
+   
+   
+   
+   
+  // Display(arr1, 1024);
+    //  Display(arr2, 1024);
+
+}
+
+
+
+
