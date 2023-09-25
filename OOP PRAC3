@@ -1,0 +1,56 @@
+public class BankAcc {
+ int account ;
+    String name;
+    double balance;
+
+    BankAcc(int account, String name, double balance){
+
+        this.account=account;
+        this.name= name;
+        this.balance= balance;
+    }
+
+    public void Deposit(int amount){
+        if (amount> 0){
+           balance+= amount;
+            System.out.println("deposited money is: " + amount);
+        }
+        else{
+            System.out.println("money deposited is invalid");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn $" + amount);
+        } else {
+            System.out.println("Invalid withdrawal amount or insufficient balance");
+        }
+    }
+
+
+    public void DisplayAccount(){
+
+        System.out.println("Account number is: ");
+        System.out.println(this.account);
+        System.out.println("Account holder name:");
+        System.out.println(this.name);
+        System.out.println("Account balance: ");
+        System.out.println(this.balance);
+    }
+    public static void main(String[] args) {
+        BankAcc person = new BankAcc(134, "garima", 30000);
+
+        System.out.println("Print details of account holder");
+        person.DisplayAccount();
+        System.out.println("MONEY DEPOSITED IS:");
+        person.Deposit(250);
+        System.out.println("MONEY WITHDRAWN IS:");
+        person.withdraw(100);
+
+        System.out.println("\nUpdated Account Details:");
+        person.DisplayAccount();
+
+    }
+}
