@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class EmployeeD {
+    String name;
+    int ID;
+    double Monthly_salary;
+
+    public void Details(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter your ID: ");
+        ID = sc.nextInt();
+
+        System.out.println("Enter monthly salary: ");
+        Monthly_salary = sc.nextDouble();
+    }
+
+    public void Tax(){
+       double annual= Monthly_salary * 12;
+        System.out.println("Annual salary is: "+annual);
+
+        double Tax= annual * 0.1;
+        System.out.println("tax deducted is: "+ Tax);
+
+    }
+    public static void main(String[] args) {
+        EmployeeD Garima= new EmployeeD();
+        System.out.println("enter your details");
+        Garima.Details();
+        Garima.Tax();
+
+
+    }
+}
