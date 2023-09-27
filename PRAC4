@@ -1,0 +1,22 @@
+public class SemDetails {
+    int roll_number;
+    int numb_subjects;
+        SemDetails(int roll_number, int numb_subjects) {
+            this.numb_subjects = numb_subjects;
+            this.roll_number = roll_number;
+
+        }
+
+
+        public void Print() {
+            System.out.println(" student roll number is: " + roll_number);
+            System.out.println("num of subjects opted is:" + numb_subjects);
+        }
+
+        public static void main(String[] args) {
+            SemDetails student = new SemDetails(47, 4);
+            student.Print();
+
+        }
+    }
+
