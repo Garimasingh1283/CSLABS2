@@ -1,0 +1,49 @@
+// implementing merge sort algorithm for
+// arrangment of numbers in a different order
+// complete OOPS codes , ux module 3 , assignments , sih , web
+// algo ass. , ux module 4, assignments, web
+
+
+
+
+// taking input from the user for n & m 
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Custom comparison function
+
+
+
+int customCompare(int a, int b) {
+    int last_diff_a = -1;
+    int last_diff_b = -1;
+    int position = 0;
+
+    while (a > 0 || b > 0) {
+        int digit_a = a % 10;
+        int digit_b = b % 10;
+
+        if (digit_a != digit_b) {
+            last_diff_a = position;
+            last_diff_b = position;
+        }
+
+        a /= 10;
+        b /= 10;
+        position++;
+    }
+
+    if (last_diff_a == -1) {
+        return 0;  // Both numbers are the same
+    }
+
+    return last_diff_b - last_diff_a;
+}
+
+// Merge function
+
+
+    // Sort the array using custom comparison
+ 
