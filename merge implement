@@ -1,0 +1,42 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class MergeImplement {
+    public static long[] Generate_rand(int n, int m){
+
+        Random num= new Random();
+//        an array is made to store the randomly generated integers
+        long[]arr= new long[n];
+
+//        generating random num of m digits with min and max
+//        for eg : min= 100 (3 digits num is considered ) &&
+//        max = 999 (highest 3 digit num)
+
+        for (long i = 0 ; i<n; i++){
+//  this line indicates that min digit if m=3 will be
+//  10 raised to the power 2 (m-1) which is 100
+            long min = (long) Math.pow(10, m-1);
+//            this indicates max digit is 999 with 10^  (m)-1
+            long max= (long) Math.pow(10, m)-1;
+
+            long numLong = num.nextLong(max- min +1) + min;
+            System.out.println("rand integer value " + (i+1) + ": " + numLong);
+
+            arr[(int) i]= numLong;
+        }
+        return arr;
+    }
+
+    public static void main(String[] args) {
+
+        int m = 3; // digits
+        int n = 5; // numbers
+        Generate_rand(5, 3);
+
+        long[] generatedNumb = Generate_rand(n,m);
+        System.out.println("array of generated random num: ");
+        for (int i = 0; i <n;i++){
+            System.out.println(generatedNumb[i]);
+        }
+    }
+    }
