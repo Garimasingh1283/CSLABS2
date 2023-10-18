@@ -1,0 +1,48 @@
+include <stdio.h>
+# include <stdlib.h>
+# include <time.h>
+int om=0;
+
+int compareLeft(int arr[][om],int k,int r,int l,int in){
+     int sum1=0;
+     for(int i=0;i<r;i++){
+        sum1+=arr[l][i];
+     }
+     
+     int sum2=0;
+     for(int i=0;i<r;i++){
+        sum2+=arr[in][i];
+     }
+     
+     if(sum1>sum2){
+       return in;
+     }
+     if(sum1<sum2){
+       return l;
+     }
+     
+     int s=r-1;
+     
+     while(s>=0){
+          if(arr[in][s]>arr[l][s]){
+             return l;
+          }
+          else if(arr[in][s]<arr[l][s]){
+             return in;
+          }
+          else{
+             s--;
+          }
+     }
+     
+     return l;
+     
+}
+
+void swap(int arr[][om],int r,int a,int b){
+     
+     for(int i=0;i<r;i++){
+         int temp=arr[a][i];}
+         // after swappng heap sort is supposed to he applied
+         
+}
