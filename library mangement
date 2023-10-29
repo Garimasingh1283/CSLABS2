@@ -1,0 +1,61 @@
+class LibraryItem {
+    private final String title;
+    private int borrowCount;
+
+    public LibraryItem(String title) {
+        this.title = title;
+        this.borrowCount = 0;
+    }
+
+    public void checkout() {
+        borrowCount++;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getBorrowCount() {
+        return borrowCount;
+    }
+
+    public String getDueDate(int days) {
+        return ("After "+ days + " days");
+    }
+}
+
+class Book extends LibraryItem {
+    public Book(String title) {
+        super(title);
+    }
+
+    @Override
+    public void checkout() {
+        super.checkout();
+        System.out.println("name of Book borrowed: " + getTitle());
+        System.out.println("Due date: " + getDueDate(14));
+    }
+}
+
+class DVD extends LibraryItem {
+    public DVD(String title) {
+        super(title);
+    }
+
+    @Override
+    public void checkout() {
+        super.checkout();
+        System.out.println("name of DVD borrowed: " + getTitle());
+        System.out.println("Due date: " + getDueDate(7));
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        Book book1 = new Book("XYZ");
+        DVD dvd1 = new DVD("ABC");
+        book1.checkout();
+        dvd1.checkout();
+        System.out.println("no. of Book borrowed: " + book1.getBorrowCount());
+        System.out.println("no. of DVD borrowed: " + dvd1.getBorrowCount());
+    }
+}
